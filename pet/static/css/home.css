@@ -1,3 +1,11 @@
 .misstion-introduce {
-    background-color: #eedab6;
+    background: linear-gradient(#eedab6, #a9ecec);
+}
+
+.common-house-introduce {
+    background: linear-gradient(#a9ecec, #eedab6);
+}
+
+.introduce-image {
+    width: 500px;
 }
