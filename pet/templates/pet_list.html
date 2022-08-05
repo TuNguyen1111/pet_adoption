@@ -1,0 +1,16 @@
+{% extends './common/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Danh sách thú cưng</title>
+{% endblock%}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pet_list.css' %}">
+{% endblock %}
+
+{% block body %}
+    {% for pet in object_list %}
+        <h1>Name: {{ pet.name }}</h1>
+    {% endfor %}
+{% endblock %}
