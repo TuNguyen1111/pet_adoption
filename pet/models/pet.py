@@ -5,7 +5,7 @@ from .animals import Animal
 
 class Pet(models.Model):
     adopter = models.ForeignKey(Adopter, on_delete=models.CASCADE, null=True, blank=True)
-    animal = models.OneToOneField(Animal, on_delete=models.CASCADE, null=False, blank=False)
+    animal = models.ForeignKey(Animal, on_delete=models.CASCADE, null=False, blank=False)
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     is_adopted = models.BooleanField(default=False)
