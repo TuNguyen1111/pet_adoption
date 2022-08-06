@@ -9,6 +9,8 @@ class Pet(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     is_adopted = models.BooleanField(default=False)
+    avatar = models.ImageField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self) -> str:
         return self.name

@@ -1,2 +1,2 @@
-from .home import HomeView
-from .pet_list import PetListView
+from .home.views import HomeView
+from .pet_list.views import PetListView
