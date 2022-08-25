@@ -1,2 +1,10 @@
 db.sqlite3
 **/__pycache__
+venv
+Lib
+pip.**
+pip3.**
+python.**
+pythonw.**
+Scripts
+pyvenv.**
