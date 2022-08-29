@@ -17,7 +17,7 @@ class AddPetView(View):
         return render(request, self.template_name, context)
 
     def post(self, request):
-        form = self.form(request.POST)
+        form = self.form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return redirect('add_pet')

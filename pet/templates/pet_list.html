@@ -10,7 +10,17 @@
 {% endblock %}
 
 {% block body %}
-    {% for pet in object_list %}
-        <h1>Name: {{ pet.name }}</h1>
-    {% endfor %}
+    <div class="d-flex gap-3 pet-list">
+        {% for pet in object_list %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ pet.avatar.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="text-center">
+                        {{ pet.name }}
+                    </p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
