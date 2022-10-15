@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock%}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <p>
+                Bạn chưa có tài khoản? Đăng kí tại <a href="/sign_up">đây</a>!
+            </p>
+            <button class="btn btn-success">
+                Đăng nhập
+            </button>
+        </form>
+    </div>
+{% endblock %}
