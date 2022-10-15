@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand nav-logo" href="#">
           <img src="https://library.kissclipart.com/20181217/jhq/kissclipart-cute-corgi-drawings-clipart-pembroke-welsh-corgi-p-046e02fd5de6743c.png" alt="" srcset="">
@@ -29,10 +29,20 @@
             <a class="nav-link" href="{% url 'add_pet' %}">Thêm pet</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div>
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+              <span class="nav-link">{{ user.username }} | </span>
+              <li class="nav-item">
+                  <a href="/logout" class="nav-link">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a href="/login" class="nav-link">Login</a>
+              </li>
+            {% endif %}
+          </ul>
+      </div>
       </div>
     </div>
 </nav>
