@@ -1,3 +1,4 @@
+from ssl import HAS_SNI
 from django import forms
 
 from ..models import Pet, Animal
@@ -6,6 +7,10 @@ from ..models import Pet, Animal
 class PetForm(forms.ModelForm):
     new_animal = forms.CharField(max_length=100, label='New animal', required=False)
     
+    def __init__(self, *args, **kwargs):
+        super(PetForm, self).__init__(*args, **kwargs)
+        self.fields['animal'].required = False
+
     class Meta:
         model = Pet
         fields = [
@@ -21,11 +26,13 @@ class PetForm(forms.ModelForm):
         pet = super().save(commit=False)
         if commit:
             new_animal_type = self.cleaned_data.get('new_animal')
-            choosen_animal = pet.animal
-            if not choosen_animal and new_animal_type:
+            if new_animal_type:
                 new_animal = Animal(name=new_animal_type)
-                pet.animal = new_animal
-                new_animal.save()
+
+                if not hasattr(pet, 'animal') or not getattr(pet, 'animal'):
+                    pet.animal = new_animal
+                    new_animal.save()
+    
             pet.save()
         return pet
 
