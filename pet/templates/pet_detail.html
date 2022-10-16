@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Pet detail</title>
+{% endblock%}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pet_detail.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-evenly p-5">
+            <div>
+                <img src="{{ object.avatar.url }}" class="pet-avatar" alt="" srcset="">
+            </div>
+    
+            <div>
+                <h1>Name: {{ object.name }} </h1>
+                <p>Age: {{ object.age }}</p>
+                <p> {{ object.description }} </p>
+
+                {% if object.is_adopted %}
+                    <p>Have owner!</p>
+                {% else %}
+                    <p>Still not have owner!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

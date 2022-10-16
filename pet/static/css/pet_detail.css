@@ -1,0 +1,9 @@
+.pet-avatar {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
