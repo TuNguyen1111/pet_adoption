@@ -8,7 +8,7 @@ from .pet import Pet
 
 
 class AdoptRequest(models.Model):
-    adopt = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    adopter = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     pet = models.ForeignKey(Pet, null=True, on_delete=models.SET_NULL)
     adopter_first_name = models.CharField(max_length=100, null=True, blank=True)
     adopter_last_name = models.CharField(max_length=100, null=True, blank=True)
