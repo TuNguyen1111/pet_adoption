@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block title %}
@@ -9,5 +10,13 @@
 {% endblock %}
 
 {% block body %}
-    <h1>THIS IS ADOPT REQUEST VIEW</h1>
+    <div class="w-50 m-auto">
+        <form action="" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

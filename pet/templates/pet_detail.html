@@ -26,6 +26,9 @@
                 {% else %}
                     <p>Still not have owner!</p>
                 {% endif %}
+                <button class="btn btn-primary">
+                    <a class="text-white" href="{% url 'adopt_request' pet.id %}">Adopt</a>
+                </button>
             </div>
         </div>
     </div>
