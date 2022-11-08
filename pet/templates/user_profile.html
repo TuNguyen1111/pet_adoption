@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+    <title>Profile</title>
+{% endblock%}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+    <div class="w-50 m-auto">
+        <form action="" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

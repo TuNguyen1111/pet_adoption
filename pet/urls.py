@@ -10,4 +10,5 @@ urlpatterns = [
     path('sign_up/', SignUpView.as_view(), name='sign_up'),
     path('pet_detail/<int:pk>', PetDetailView.as_view(), name='pet_detail'),
     path('adopt_request/<int:pet_id>', AdoptRequestView.as_view(), name='adopt_request'),
+    path('user_profile', UserProfileView.as_view(), name='user_profile'),
 ]

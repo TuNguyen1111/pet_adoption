@@ -4,3 +4,4 @@ from .add_pet.views import AddPetView
 from .sign_up.views import SignUpView
 from .pet_detail.views import PetDetailView
 from .adopt_request.views import AdoptRequestView
+from .user_profile.views import UserProfileView
