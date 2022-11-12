@@ -11,6 +11,15 @@
 
 {% block body %}
     <div class="w-50 m-auto">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <form action="" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             {{ form|crispy }}
